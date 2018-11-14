@@ -27,10 +27,10 @@ public class Compra implements Serializable {
     private String modelo;
 
     @Column(name = "ANO_FABRICACAO")
-    private Date anoFabricacao;
+    private Integer anoFabricacao;
 
     @Column(name = "ANO_MODELO")
-    private Date anoModelo;
+    private Integer anoModelo;
 
     @Column(name = "COR")
     private String cor;
@@ -72,6 +72,7 @@ public class Compra implements Serializable {
     @Column(name = "LUCRO")
     private BigDecimal lucro;
 
+    @NotNull
     @Column(name = "QTDE")
     private Integer qtde;
 }

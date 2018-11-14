@@ -24,7 +24,7 @@ public class Pessoa implements Serializable {
     private String sexo;
 
     @Column(name = "ESTADO_CIVIL")
-    private String estado_civil;
+    private String estadoCivil;
 
     @NotNull
     @Column(name = "CATEGORIA")
@@ -32,10 +32,11 @@ public class Pessoa implements Serializable {
 
     @NotNull
     @Column(name = "TIPO_PESSOA")
-    private String tipo_pessoa;
+    private String tipoPessoa;
 
+    @NotNull
     @Column(name = "CPF_CNPJ")
-    private Long cpf_cnpj;
+    private Long cpfCnpj;
 
     @Column(name = "RG")
     private Long rg;
@@ -45,7 +46,7 @@ public class Pessoa implements Serializable {
 
     @NotNull
     @Column(name = "CEP")
-    private Long cep;
+    private String cep;
 
     @NotNull
     @Column(name = "ENDERECO")
@@ -71,10 +72,10 @@ public class Pessoa implements Serializable {
 
     @NotNull
     @Column(name = "TEL_CEL")
-    private Long telCel;
+    private String telCel;
 
     @Column(name = "TEL_RES")
-    private Long telRes;
+    private String telRes;
 
     @Column(name = "EMAIL")
     private String email;

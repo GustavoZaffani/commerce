@@ -18,12 +18,4 @@ public class Venda implements Serializable {
 
     @Column(name = "VLR_TOTAL")
     private BigDecimal vlrTotal;
-
-
-
-
-
-
-
-
 }
