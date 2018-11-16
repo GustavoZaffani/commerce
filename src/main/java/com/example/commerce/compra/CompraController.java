@@ -16,6 +16,7 @@ public class CompraController {
     public Compra findOne(@PathVariable("id") Long id){
         return compraService.findOne(id);
     }
+
     @GetMapping
     public List<Compra> findAll(){
         return compraService.findAll();
@@ -24,8 +25,9 @@ public class CompraController {
     public Compra save(@RequestBody Compra compra){
         return compraService.save(compra);
     }
-    @DeleteMapping
-    public void delete(@RequestBody Compra compra){
-        compraService.delete(compra);
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id){
+        compraService.delete(id);
     }
 }

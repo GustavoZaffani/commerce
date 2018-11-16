@@ -1,8 +1,11 @@
 package com.example.commerce.venda;
 
+import com.example.commerce.compra.Compra;
+import com.example.commerce.pessoa.Pessoa;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -18,4 +21,19 @@ public class Venda implements Serializable {
 
     @Column(name = "VLR_TOTAL")
     private BigDecimal vlrTotal;
+
+    @NotNull
+    @JoinColumn(name = "ID_CLIENTE")
+    private Pessoa pessoa;
+
+    @NotNull
+    @JoinColumn(name = "ID_VENDEDOR")
+    private Pessoa pessoa;
+
+    @NotNull
+    @JoinColumn(name = "ID_VEICULO")
+    private Compra compra;
+
+
+
 }

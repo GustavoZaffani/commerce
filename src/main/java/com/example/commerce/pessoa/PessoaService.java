@@ -10,5 +10,6 @@ public interface PessoaService {
 
     Pessoa save (Pessoa pessoa);
 
-    void delete (Pessoa pessoa);
+
+    void delete(Long id);
 }

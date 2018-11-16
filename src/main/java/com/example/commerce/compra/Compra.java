@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "COMPRAS")
@@ -53,7 +53,7 @@ public class Compra implements Serializable {
     private String placa;
 
     @Column(name = "DATA_COMPRA")
-    private Date dataCompra;
+    private LocalDate dataCompra;
 
     @Column(name = "KM")
     private Integer km;

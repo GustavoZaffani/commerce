@@ -26,7 +26,7 @@ public class PessoaServiceImpl implements PessoaService {
     }
 
     @Override
-    public void delete(Pessoa pessoa) {
-        pessoaData.delete(pessoa);
+    public void delete(Long id) {
+        pessoaData.deleteById(id);
     }
 }

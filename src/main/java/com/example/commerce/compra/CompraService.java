@@ -10,5 +10,5 @@ public interface CompraService {
 
     Compra save (Compra compra);
 
-    void delete (Compra compra);
+    void delete (Long compra);
 }

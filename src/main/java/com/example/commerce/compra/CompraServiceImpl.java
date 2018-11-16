@@ -26,7 +26,7 @@ public class CompraServiceImpl implements CompraService {
     }
 
     @Override
-    public void delete(Compra compra) {
-        compraData.delete(compra);
+    public void delete(Long id) {
+        compraData.deleteById(id);
     }
 }
