@@ -1,6 +1,7 @@
 package com.example.commerce.compra;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,5 +29,14 @@ public class CompraServiceImpl implements CompraService {
     @Override
     public void delete(Long id) {
         compraData.deleteById(id);
+    }
+
+    @Override
+    public List<Compra> complete(String query) {
+        if("".equalsIgnoreCase(query)){
+            return compraData.findAll();
+        } else {
+            return compraData.findByModeloLike("%" + query + "%");
+        }
     }
 }

@@ -13,7 +13,7 @@ public class PessoaController {
     private PessoaService pessoaService;
 
     @GetMapping("/{id}")
-    public Pessoa findOne(@PathVariable("id") Long id){
+    public Pessoa findOne(@PathVariable("id") Integer id){
         return pessoaService.findOne(id);
     }
 
@@ -30,5 +30,11 @@ public class PessoaController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id){
         pessoaService.delete(id);
+    }
+
+    @GetMapping("/complete")
+    public List<Pessoa> complete(@RequestParam("query") String query,
+                                 @RequestParam("categoria") String categoria){
+        return pessoaService.complete(query, categoria);
     }
 }

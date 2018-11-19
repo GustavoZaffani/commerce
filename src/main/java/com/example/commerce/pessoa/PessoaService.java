@@ -12,4 +12,6 @@ public interface PessoaService {
 
 
     void delete(Long id);
+
+    List<Pessoa> complete(String query, String categoria);
 }

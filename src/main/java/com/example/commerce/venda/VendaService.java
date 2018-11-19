@@ -10,5 +10,6 @@ public interface VendaService {
 
     Venda save (Venda venda);
 
-    void delete (Venda venda);
+    void delete (Long id);
+
 }

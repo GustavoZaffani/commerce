@@ -1,5 +1,6 @@
 package com.example.commerce.compra;
 
+import com.example.commerce.pessoa.Pessoa;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -75,4 +76,8 @@ public class Compra implements Serializable {
     @NotNull
     @Column(name = "QTDE")
     private Integer qtde;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_FORNECEDOR")
+    private Pessoa fornecedor;
 }

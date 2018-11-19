@@ -4,11 +4,13 @@ import java.util.List;
 
 public interface CompraService {
 
-    Compra findOne(Long id);
+    Compra findOne(Integer id);
 
     List<Compra> findAll();
 
     Compra save (Compra compra);
 
-    void delete (Long compra);
+    void delete (Long id);
+
+    List<Compra> complete (String query);
 }

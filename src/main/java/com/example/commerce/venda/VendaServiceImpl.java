@@ -26,7 +26,9 @@ public class VendaServiceImpl implements VendaService{
     }
 
     @Override
-    public void delete(Venda venda) {
-        vendaData.delete(venda);
+    public void delete(Long id) {
+        vendaData.deleteById(id);
     }
+
+
 }

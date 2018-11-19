@@ -1,6 +1,8 @@
 package com.example.commerce.pessoa;
 
+import antlr.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,4 +31,16 @@ public class PessoaServiceImpl implements PessoaService {
     public void delete(Long id) {
         pessoaData.deleteById(id);
     }
+
+    @Override
+    public List<Pessoa> complete(String query, String categoria) {
+        if ("".equalsIgnoreCase(query)){
+            return pessoaData.findByCategoria(categoria);
+        }else{
+            return pessoaData.findByNomeLikeAndCategoriaEquals("%" + query + "%", categoria,
+                    PageRequest.of(0 , 20));
+        }
+    }
+
+
 }

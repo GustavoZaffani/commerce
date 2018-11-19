@@ -17,23 +17,23 @@ public class Venda implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    private Integer id;
 
     @Column(name = "VLR_TOTAL")
     private BigDecimal vlrTotal;
 
+    @ManyToOne
     @NotNull
     @JoinColumn(name = "ID_CLIENTE")
-    private Pessoa pessoa;
+    private Pessoa cliente;
 
+    @ManyToOne
     @NotNull
     @JoinColumn(name = "ID_VENDEDOR")
-    private Pessoa pessoa;
+    private Pessoa vendedor;
 
-    @NotNull
-    @JoinColumn(name = "ID_VEICULO")
-    private Compra compra;
-
-
-
+//    @ManyToMany
+//    @NotNull
+//    @JoinColumn(name = "ID_VEICULO")
+//    private Compra compra;
 }

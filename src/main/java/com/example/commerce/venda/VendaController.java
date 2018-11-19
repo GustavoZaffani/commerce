@@ -16,17 +16,20 @@ public class VendaController {
     public Venda findOne(@PathVariable("id") Long id){
         return vendaService.findOne(id);
     }
+
     @GetMapping
     public List<Venda> findAll(){
         return vendaService.findAll();
     }
+
     @PostMapping
     public Venda save (@RequestBody Venda venda){
         return vendaService.save(venda);
     }
+
     @DeleteMapping
-    public void delete(@RequestBody Venda venda){
-        vendaService.delete(venda);
+    public void delete(@PathVariable("id") Long id){
+        vendaService.delete(id);
     }
 
 }

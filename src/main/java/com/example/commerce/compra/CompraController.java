@@ -30,4 +30,10 @@ public class CompraController {
     public void delete(@PathVariable("id") Long id){
         compraService.delete(id);
     }
+
+    @GetMapping("/complete")
+    public List <Compra> complete(@RequestParam("query") String query) {
+        return compraService.complete(query);
+    }
+
 }
