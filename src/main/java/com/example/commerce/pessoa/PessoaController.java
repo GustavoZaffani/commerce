@@ -28,7 +28,7 @@ public class PessoaController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Long id){
+    public void delete(@PathVariable("id") Integer id){
         pessoaService.delete(id);
     }
 

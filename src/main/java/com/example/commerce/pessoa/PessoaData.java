@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PessoaData extends JpaRepository<Pessoa, Long> {
+public interface PessoaData extends JpaRepository<Pessoa, Integer> {
 
     List<Pessoa> findByNomeLikeAndCategoriaEquals(String nome, String categoria, Pageable page);
 

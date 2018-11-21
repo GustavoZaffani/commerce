@@ -13,7 +13,7 @@ public class PessoaServiceImpl implements PessoaService {
     @Autowired PessoaData pessoaData;
 
     @Override
-    public Pessoa findOne(Long id) {
+    public Pessoa findOne(Integer id) {
         return pessoaData.findById(id).orElse(null);
     }
 
@@ -28,7 +28,7 @@ public class PessoaServiceImpl implements PessoaService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Integer id) {
         pessoaData.deleteById(id);
     }
 

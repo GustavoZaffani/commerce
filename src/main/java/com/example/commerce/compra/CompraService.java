@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CompraService {
 
-    Compra findOne(Integer id);
+    Compra findOne(Long id);
 
     List<Compra> findAll();
 

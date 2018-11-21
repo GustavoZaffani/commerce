@@ -32,6 +32,16 @@ public class Venda implements Serializable {
     @JoinColumn(name = "ID_VENDEDOR")
     private Pessoa vendedor;
 
+
+    // TODO verificar as novas colunas da tabela.
+    @Column(name = "VLR_UNITARIO");
+    private BigDecimal vlrUnitario;
+
+    @Column(name = "VLR_FINAL");
+    private BigDecimal vlrFinal;
+
+
+
 //    @ManyToMany
 //    @NotNull
 //    @JoinColumn(name = "ID_VEICULO")
