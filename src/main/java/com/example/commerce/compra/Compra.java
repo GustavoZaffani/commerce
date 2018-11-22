@@ -1,6 +1,10 @@
 package com.example.commerce.compra;
 
+import com.example.commerce.configuration.LocalDateDeserializer;
+import com.example.commerce.configuration.LocalDateSerializer;
 import com.example.commerce.pessoa.Pessoa;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -54,13 +58,12 @@ public class Compra implements Serializable {
     private String placa;
 
     @Column(name = "DATA_COMPRA")
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dataCompra;
 
     @Column(name = "KM")
     private Integer km;
-
-    @Column(name = "ORIGEM")
-    private String origem;
 
     @NotNull
     @Column(name = "PRECO_CUSTO")
@@ -80,4 +83,7 @@ public class Compra implements Serializable {
     @ManyToOne
     @JoinColumn(name = "ID_FORNECEDOR")
     private Pessoa fornecedor;
+
+    @Column(name = "VLR_TOTAL")
+    private BigDecimal vlrTotal;
 }

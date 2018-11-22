@@ -34,11 +34,11 @@ public class Venda implements Serializable {
 
 
     // TODO verificar as novas colunas da tabela.
-    @Column(name = "VLR_UNITARIO");
-    private BigDecimal vlrUnitario;
-
-    @Column(name = "VLR_FINAL");
-    private BigDecimal vlrFinal;
+//    @Column(name = "VLR_UNITARIO");
+//    private BigDecimal vlrUnitario;
+//
+//    @Column(name = "VLR_FINAL");
+//    private BigDecimal vlrFinal;
 
 
 
