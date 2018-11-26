@@ -1,13 +1,19 @@
 package com.example.commerce.venda;
 
-import com.example.commerce.compra.Compra;
+import com.example.commerce.configuration.LocalDateDeserializer;
+import com.example.commerce.configuration.LocalDateSerializer;
 import com.example.commerce.pessoa.Pessoa;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "VENDAS")
@@ -32,18 +38,14 @@ public class Venda implements Serializable {
     @JoinColumn(name = "ID_VENDEDOR")
     private Pessoa vendedor;
 
+    @Column(name = "DATA_VENDA")
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate dataVenda;
 
-    // TODO verificar as novas colunas da tabela.
-//    @Column(name = "VLR_UNITARIO");
-//    private BigDecimal vlrUnitario;
-//
-//    @Column(name = "VLR_FINAL");
-//    private BigDecimal vlrFinal;
+//    @JsonManagedReference
+//    @OrderBy("id")
+//    @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+//    private List<ItemVenda> vendaItemList;
 
-
-
-//    @ManyToMany
-//    @NotNull
-//    @JoinColumn(name = "ID_VEICULO")
-//    private Compra compra;
 }
