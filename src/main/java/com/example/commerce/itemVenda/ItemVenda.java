@@ -1,8 +1,8 @@
-/*
 package com.example.commerce.itemVenda;
 
 import com.example.commerce.compra.Compra;
 import com.example.commerce.venda.Venda;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,24 +18,21 @@ public class ItemVenda {
     @Column(name="ID")
     private Integer id;
 
+    @JsonBackReference
     @ManyToOne
-    @Column(name = "ID_VENDA")
+    @JoinColumn(name = "ID_VENDA")
     private Venda venda;
 
     @ManyToOne
-    @Column(name = "ID_CARRO")
-    private Compra carro;
-
-    @Column(name = "QTDE")
-    private Integer qtde;
+    @JoinColumn(name = "ID_CARRO")
+    private Compra veiculo;
 
     @Column(name = "VLR_UNITARIO")
-    private BigDecimal vlrUnitario;
+    private BigDecimal valorUnitario;
 
     @Column(name = "DESCONTO")
     private BigDecimal desconto;
 
     @Column(name = "VLR_TOTAL")
-    private BigDecimal vlrTotal;
+    private BigDecimal valorTotal;
 }
-*/

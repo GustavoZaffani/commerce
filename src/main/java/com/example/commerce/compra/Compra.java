@@ -76,14 +76,13 @@ public class Compra implements Serializable {
     @Column(name = "LUCRO")
     private BigDecimal lucro;
 
-    @NotNull
-    @Column(name = "QTDE")
-    private Integer qtde;
-
     @ManyToOne
     @JoinColumn(name = "ID_FORNECEDOR")
     private Pessoa fornecedor;
 
     @Column(name = "VLR_TOTAL")
     private BigDecimal vlrTotal;
+
+    @Column(name = "VENDIDO")
+    private Boolean vendido;
 }

@@ -2,6 +2,7 @@ package com.example.commerce.venda;
 
 import com.example.commerce.configuration.LocalDateDeserializer;
 import com.example.commerce.configuration.LocalDateSerializer;
+import com.example.commerce.itemVenda.ItemVenda;
 import com.example.commerce.pessoa.Pessoa;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -23,7 +24,7 @@ public class Venda implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Integer id;
+    private Long id;
 
     @Column(name = "VLR_TOTAL")
     private BigDecimal vlrTotal;
@@ -43,9 +44,9 @@ public class Venda implements Serializable {
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dataVenda;
 
-//    @JsonManagedReference
-//    @OrderBy("id")
-//    @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-//    private List<ItemVenda> vendaItemList;
+    @JsonManagedReference
+    @OrderBy("id")
+    @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private List<ItemVenda> itens;
 
 }

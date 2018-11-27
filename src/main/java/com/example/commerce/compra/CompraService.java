@@ -13,4 +13,6 @@ public interface CompraService {
     void delete (Long id);
 
     List<Compra> complete (String query);
+
+    Compra atualizaEstoque (Compra compra);
 }

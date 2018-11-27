@@ -23,6 +23,7 @@ public class CompraServiceImpl implements CompraService {
 
     @Override
     public Compra save(Compra compra) {
+
         return compraData.save(compra);
     }
 
@@ -39,4 +40,12 @@ public class CompraServiceImpl implements CompraService {
             return compraData.findByModeloLike("%" + query + "%");
         }
     }
+
+    @Override
+    public Compra atualizaEstoque(Compra compra) {
+        //compra.getQtde()
+        return null;
+    }
+
+
 }

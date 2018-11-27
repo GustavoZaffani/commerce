@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vendas")
+@RequestMapping("/venda")
 public class VendaController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class VendaController {
         return vendaService.save(venda);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id){
         vendaService.delete(id);
     }
