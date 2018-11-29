@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface PessoaData extends JpaRepository<Pessoa, Integer> {
 
-    List<Pessoa> findByNomeLikeAndCategoriaEquals(String nome, String categoria, Pageable page);
+    List<Pessoa> findByNomeLikeAndCategoriaEquals(String nome, String categoria,Pageable page);
 
     List<Pessoa> findByCategoria(String categoria);
 }

@@ -21,6 +21,7 @@ public class CompraController {
     public List<Compra> findAll(){
         return compraService.findAll();
     }
+
     @PostMapping
     public Compra save(@RequestBody Compra compra){
         return compraService.save(compra);
@@ -36,4 +37,8 @@ public class CompraController {
         return compraService.complete(query);
     }
 
+    @GetMapping("/disponivel")
+    public List<Compra> findAllDisponiveis(){
+        return compraService.findAllDisponiveis();
+    }
 }

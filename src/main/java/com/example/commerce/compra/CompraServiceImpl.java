@@ -35,17 +35,14 @@ public class CompraServiceImpl implements CompraService {
     @Override
     public List<Compra> complete(String query) {
         if("".equalsIgnoreCase(query)){
-            return compraData.findAll();
+            return compraData.findAllByVendidoIsFalse();
         } else {
-            return compraData.findByModeloLike("%" + query + "%");
+            return compraData.findByModeloLikeAndVendidoIsFalse("%" + query + "%");
         }
     }
 
     @Override
-    public Compra atualizaEstoque(Compra compra) {
-        //compra.getQtde()
-        return null;
+    public List<Compra> findAllDisponiveis() {
+        return compraData.findAllByVendidoIsFalse();
     }
-
-
 }

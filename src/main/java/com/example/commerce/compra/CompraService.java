@@ -14,5 +14,5 @@ public interface CompraService {
 
     List<Compra> complete (String query);
 
-    Compra atualizaEstoque (Compra compra);
+    List<Compra> findAllDisponiveis();
 }
